@@ -1,0 +1,17 @@
+.container{
+    background-color: red;
+}
+#grey{
+    background-color: yellowgreen;
+    z-index: 1;
+}
+
+#blue{
+    background-color: blueviolet;
+    z-index: 2;
+}
+
+#red{
+    background-color: cornflowerblue;
+    z-index: 3;
+}

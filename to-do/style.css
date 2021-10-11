@@ -1,0 +1,19 @@
+#container{
+    width: 700px;
+    height: 450px;
+    margin: 70px auto;
+    border: 2px solid black;
+}
+#projects{
+    width: 650px;
+    height: 250px;
+    margin: 0px auto;
+}
+ol li{
+border: 1px dotted black;
+cursor: pointer;
+margin-bottom: 5px;
+}
+ol li:hover{
+    background: blue;
+}

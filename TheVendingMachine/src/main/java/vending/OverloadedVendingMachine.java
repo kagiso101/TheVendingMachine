@@ -18,33 +18,48 @@ public class OverloadedVendingMachine {
      this.softDrinkQty = softDrinkQty1;
      this.saltySnacksQty = saltySnacksQty1;
      this.chocolatesQty = chocolatesQty1;
-     new Product().totalInStock(chocolatesQty,saltySnacksQty,softDrinkQty);
+     new Product().totalInStock(chocolatesQty1,saltySnacksQty1,softDrinkQty1);
     }
 
 
     public void buy(Product product){
-        if(product.totalStock > 0){
-            int total = product.totalStock - 1;
-            System.out.println("Stock level: " + total);
-        }
+        if(vendingMachineProducts.size() > 0){
+            for (Object item : vendingMachineProducts) {
+                if(product.equals(item)){
+                   vendingMachineProducts.remove(item);
+                }
 
+            }
+            System.out.println("Stock level: " + vendingMachineProducts.size());
+        }else{
+            System.out.println("you need stock!");
+        }
     }
 
 
    public void addStock(Product product){
 
-        softDrinkQty +=3;
-        chocolatesQty +=3;
-        saltySnacksQty +=3;
 
-        System.out.print("Stock level is now : " + product.totalStock);
+       vendingMachineProducts.add( softDrinkQty);
+       vendingMachineProducts.add( softDrinkQty);
+       vendingMachineProducts.add( softDrinkQty);
+
+       vendingMachineProducts.add( chocolatesQty);
+       vendingMachineProducts.add( chocolatesQty);
+       vendingMachineProducts.add( chocolatesQty);
+
+
+       vendingMachineProducts.add( saltySnacksQty);
+       vendingMachineProducts.add( saltySnacksQty);
+       vendingMachineProducts.add( saltySnacksQty);
+
+        System.out.print("Stock level is now : " + vendingMachineProducts.size());
 
    }
 
 
  public int  totalStock(){
-       int totalInStock = saltySnacksQty + chocolatesQty + softDrinkQty;
-       return totalInStock;
+      return vendingMachineProducts.size();
 }
 
 
@@ -67,7 +82,8 @@ public class OverloadedVendingMachine {
         overloadedVendingMachine.totalStock();
         Product product = new Product();
         Product salty = new SaltySnack();
-//        overloadedVendingMachine.addStock(product);
+        overloadedVendingMachine.addStock(product);
+
         overloadedVendingMachine.buy(salty);
     
 
